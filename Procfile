@@ -1,1 +1,1 @@
-web: python class+lugbot.py
+web: python class+lugbot.py ${PORT}
