@@ -11,6 +11,7 @@ import datetime
 
 # In[3]:
 
+token = '496491775:AAEAXNyNrQojPSwmcOEgaqk3WkTo2hf7_5w'
 
 class BotHandler:
 
