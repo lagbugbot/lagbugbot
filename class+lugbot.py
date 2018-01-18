@@ -48,7 +48,7 @@ class BotHandler:
 
 greet_bot = BotHandler(token)  
 greetings = ('hello', 'hi', 'greetings', 'sup')  
-badwords = ('шакал', 'толстый', 'свинья', 'жирный', 'попа', 'жопа', 'тварь', 'тупой', 'ишак')
+badwords = ('шакал', 'толстый', 'свинья', 'жирный', 'попа', 'жопа', 'тварь', 'тупой', 'ишак', 'дурак', 'балда', 'fuck you', 'гавно', 'ублюдок', 'баран', 'идиот')
 now = datetime.datetime.now()
 
 
