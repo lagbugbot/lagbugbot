@@ -48,7 +48,7 @@ class BotHandler:
 
 greet_bot = BotHandler(token)  
 greetings = ('hello', 'hi', 'greetings', 'sup')  
-badword = ('шакал', 'толстый', 'свинья', 'жирный', 'попа', 'жопа', 'тварь', 'тупой', 'ишак')
+badwords = ('шакал', 'толстый', 'свинья', 'жирный', 'попа', 'жопа', 'тварь', 'тупой', 'ишак')
 now = datetime.datetime.now()
 
 
@@ -68,8 +68,9 @@ def main():
         last_chat_id = last_update['message']['chat']['id']
         last_chat_name = last_update['message']['chat']['first_name']
 
-        if last_chat_text in badwords:
-            greet_bot.send_message(last_chat_id, 'сам ты ' + last_chat_text)
+
+        if last_chat_text.lower() in badwords:
+            greet_bot.send_message(last_chat_id, 'сам ты {}'.format(last_chat_text))
         else:
             greet_bot.send_message(last_chat_id, last_chat_text)
                 
