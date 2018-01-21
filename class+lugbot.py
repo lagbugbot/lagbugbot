@@ -71,7 +71,7 @@ def main():
 
         if last_chat_text.lower() in badwords:
             greet_bot.send_message(last_chat_id, 'сам ты {}'.format(last_chat_text))
-        elif last_chat_text.lower() == 'Боря хуй':
+        elif last_chat_text.lower() == 'боря хуй':
             greet_bot.send_message(last_chat_id, 'сам ты, Сережа, хуй')
         else:
             greet_bot.send_message(last_chat_id, last_chat_text)
