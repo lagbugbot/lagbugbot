@@ -74,7 +74,7 @@ def main():
                 greet_bot.send_message(last_chat_id, 'сам ты, Сережа, хуй')
             else:
                 greet_bot.send_message(last_chat_id, last_chat_text)
-        except ValueError:
+        except:
             pass
         new_offset = last_update_id + 1
 
