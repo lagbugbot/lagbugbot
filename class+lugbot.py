@@ -64,11 +64,11 @@ def main():
         if not last_update:
             continue
         last_update_id = last_update['update_id']
-        if not last_chat_text:
-            continue
         last_chat_text = last_update['message']['text']
+        if last_chat_text == None:
+            continue
         last_chat_id = last_update['message']['chat']['id']
-        if not last_chat_id:
+        if last_chat_id == None:
             continue
         last_chat_name = last_update['message']['chat']['first_name']
         if not last_chat_name:
