@@ -64,9 +64,9 @@ def main():
         if not last_update:
             continue
         last_update_id = last_update['update_id']
-        last_chat_text = last_update['message']['text']
         if not last_chat_text:
             continue
+        last_chat_text = last_update['message']['text']
         last_chat_id = last_update['message']['chat']['id']
         if not last_chat_id:
             continue
