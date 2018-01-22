@@ -57,7 +57,7 @@ def main():
     today = now.day
     hour = now.hour
 
-    while True:
+    while last_chat_text = last_update['message']['text'] != None:
         greet_bot.get_updates(new_offset)
 
         last_update = greet_bot.get_last_update()
