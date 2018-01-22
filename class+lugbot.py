@@ -74,8 +74,10 @@ def main():
                 greet_bot.send_message(last_chat_id, 'сам ты, Сережа, хуй')
             else:
                 greet_bot.send_message(last_chat_id, last_chat_text)
-        except:
+        except Exception as e:
             pass
+            print(e)
+            
         new_offset = last_update_id + 1
 
 if __name__ == '__main__':  
