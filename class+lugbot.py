@@ -68,15 +68,16 @@ def main():
             last_chat_text = last_update['message']['text']
             last_chat_id = last_update['message']['chat']['id']
             last_chat_name = last_update['message']['chat']['first_name']       
-            if last_chat_text.lower() in badwords:
-                greet_bot.send_message(last_chat_id, 'сам ты {}'.format(last_chat_text))
-            elif last_chat_text.lower() == 'боря хуй':
-                greet_bot.send_message(last_chat_id, 'сам ты, Сережа, хуй')
-            else:
-                greet_bot.send_message(last_chat_id, last_chat_text)
         except Exception as e:
             pass
             print(e)
+        if last_chat_text.lower() in badwords:
+            greet_bot.send_message(last_chat_id, 'сам ты {}'.format(last_chat_text))
+        elif last_chat_text.lower() == 'боря хуй':
+            greet_bot.send_message(last_chat_id, 'сам ты, Сережа, хуй')
+        else:
+            greet_bot.send_message(last_chat_id, last_chat_text)
+
             
         new_offset = last_update_id + 1
 
