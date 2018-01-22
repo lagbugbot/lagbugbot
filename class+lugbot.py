@@ -65,15 +65,11 @@ def main():
             continue
         last_update_id = last_update['update_id']
         last_chat_text = last_update['message']['text']
-        if last_chat_text == None:
+        if last_update['text'] == None:
             continue
         last_chat_id = last_update['message']['chat']['id']
-        if last_chat_id == None:
-            continue
         last_chat_name = last_update['message']['chat']['first_name']
-        if not last_chat_name:
-            continue
-            
+                    
         if last_chat_text.lower() in badwords:
             greet_bot.send_message(last_chat_id, 'сам ты {}'.format(last_chat_text))
         elif last_chat_text.lower() == 'боря хуй':
