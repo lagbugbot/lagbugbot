@@ -31,7 +31,13 @@ class BotHandler:
         method = 'sendMessage'
         resp = requests.post(self.api_url + method, params)
         return resp
-
+    
+    def send_photo(self, chat_id, photo):
+        params = {'chat_id': chat_id, 'photo': photo}
+        method = 'sendPhoto'
+        resp = requests.post(self.api_url + method, params)
+        return resp
+    
     def get_last_update(self):
         get_result = self.get_updates()
 
@@ -77,7 +83,7 @@ def main():
         
         if last_chat_text == 'У':
             greet_bot.send_photo(last_chat_id, 'https://pp.userapi.com/c540108/v540108844/815c/0Ei7pxV3gyE.jpg')
-        if last_chat_text == 'R':
+        elif last_chat_text == 'R':
             greet_bot.send_photo(last_chat_id, 'https://web.telegram.org/86194106-93ac-40d4-8126-03f865f15540')
             
             
