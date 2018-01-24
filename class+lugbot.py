@@ -81,10 +81,12 @@ def main():
             pass
             print(e)
         
-        if last_chat_text == 'У':
+        if last_chat_text.lower() == 'уходи':
             greet_bot.send_photo(last_chat_id, 'https://pp.userapi.com/c540108/v540108844/815c/0Ei7pxV3gyE.jpg')
-        elif last_chat_text == 'R':
+        elif last_chat_text.lower()  == 'r' or last_chat_text == 'тупой':
             greet_bot.send_photo(last_chat_id, 'https://i.imgur.com/xeYzahch.jpg')
+        elif last_chat_text.lower() == 'alert':
+            greet_bot.send_photo(last_chat_id, 'https://i.imgur.com/QASOJat.gif')
             
             
 #        if last_chat_name == 'PhazMinze':
