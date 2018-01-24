@@ -84,7 +84,7 @@ def main():
         if last_chat_text == 'У':
             greet_bot.send_photo(last_chat_id, 'https://pp.userapi.com/c540108/v540108844/815c/0Ei7pxV3gyE.jpg')
         elif last_chat_text == 'R':
-            greet_bot.send_photo(last_chat_id, 'blob:https://web.telegram.org/82d7c0b9-bafa-4f9d-a488-ba4d546b966b')
+            greet_bot.send_photo(last_chat_id, 'https://i.imgur.com/xeYzahch.jpg')
             
             
 #        if last_chat_name == 'PhazMinze':
