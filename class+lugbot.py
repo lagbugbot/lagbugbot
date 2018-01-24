@@ -83,10 +83,12 @@ def main():
         
         if last_chat_text.lower() == 'уходи':
             greet_bot.send_photo(last_chat_id, 'https://pp.userapi.com/c540108/v540108844/815c/0Ei7pxV3gyE.jpg')
-        elif last_chat_text.lower()  == 'r' or last_chat_text == 'тупой':
+        elif last_chat_text.lower()  == 'r' or last_chat_text.lower() == 'тупой':
             greet_bot.send_photo(last_chat_id, 'https://i.imgur.com/xeYzahch.jpg')
         elif last_chat_text.lower() == 'alert':
             greet_bot.send_photo(last_chat_id, 'https://i.imgur.com/QASOJat.gif')
+        elif last_chat_text.lower() == 'шта':
+            greet_bot.send_photo(last_chat_id, 'https://pbs.twimg.com/media/ByObDPcIQAAoG2V.jpg')
             
             
 #        if last_chat_name == 'PhazMinze':
