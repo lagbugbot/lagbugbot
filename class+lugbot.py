@@ -47,6 +47,11 @@ class BotHandler:
             last_update = None
 
         return last_update
+    
+    def wikisearch(self, text):
+        wiki = WikiApi()
+        results = wiki.find(text)
+        return results
 
 
 # In[4]:
@@ -81,29 +86,26 @@ def main():
             pass
             print(e)
         
-        if last_chat_text.lower() == 'уходи':
+        if 'уходи' in last_chat_text.lower():
             greet_bot.send_photo(last_chat_id, 'https://pp.userapi.com/c540108/v540108844/815c/0Ei7pxV3gyE.jpg')
-        elif last_chat_text.lower()  == 'r' or last_chat_text.lower() == 'тупой':
+        if 'ретард' in last_chat_text.lower() or 'тупой' in last_chat_text.lower():
             greet_bot.send_photo(last_chat_id, 'https://i.imgur.com/xeYzahch.jpg')
-        elif last_chat_text.lower() == 'alert':
+        if 'alert' in last_chat_text.lower() or 'тревога' in last_chat_text.lower():
             greet_bot.send_photo(last_chat_id, 'https://i.imgur.com/QASOJat.gif')
-        elif last_chat_text.lower() == 'шта':
+        if 'шта' in last_chat_text.lower() or 'wat' in last_chat_text.lower():
             greet_bot.send_photo(last_chat_id, 'https://pbs.twimg.com/media/ByObDPcIQAAoG2V.jpg')
+        if 'лел' in last_chat_text.lower():
+            greet_bot.send_message(last_chat_id, 'не надо тут лел')
+        if 'wiki' in last_chat_text.lower():
+            greet_bot.send_message(last_chat_id, last_chat_text.replace("wiki",""))
+            x = greet_bot.wikisearch(last_chat_text.replace("wiki",""))
+            x
+            greet_bot.send_message(last_chat_id, x[0 - 3])
             
-            
-#        if last_chat_name == 'PhazMinze':
-#            greet_bot.send_message(last_chat_id, 'Даур, не надо')
-#        elif last_chat_name == 'Arsen':
-#            greet_bot.send_message(last_chat_id, 'Не слушайте его')
-#        elif last_chat_name == 'Boris':
-#            greet_bot.send_message(last_chat_id, 'Он прав')
-            
+        
+        
 #        if last_chat_text.lower() in badwords:
 #            greet_bot.send_message(last_chat_id, 'сам ты {}'.format(last_chat_text))
-#        elif last_chat_text.lower() == 'боря хуй':
-#            greet_bot.send_message(last_chat_id, 'сам ты, Сережа, хуй')
-#        else:
-#           greet_bot.send_message(last_chat_id, last_chat_text)
 
             
         new_offset = last_update_id + 1
@@ -113,4 +115,5 @@ if __name__ == '__main__':
         main()
     except KeyboardInterrupt:
         exit()
+
 
