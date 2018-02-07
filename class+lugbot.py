@@ -93,6 +93,10 @@ def main():
             greet_bot.send_message(last_chat_id, desc)
             greet_bot.send_message(last_chat_id, url)
             
+        if  last_chat_text.lower() == 'сдр' and last_chat_name.lower() == 'boris':
+            greet_bot.send_message(last_chat_id, 'С днем рождения, Арсенушка! Радости, улыбок, безмерного и бесконечного счастья. Желаю заиметь побольше рычагов управления своей жизни, чтобы мог влиять на все! Желаю тебе оказываться всегда в нужном месте и в нужное время!')
+            greet_bot.send_photo(last_chat_id, 'https://fresh-cards.ru/resized/images/stories/virtuemart/product/otkrytka-s-dnyom-rozhdeniya-komputerschikou.jpg')
+            
  ''''    if 'уходи' in last_chat_text.lower():
             greet_bot.send_photo(last_chat_id, 'https://pp.userapi.com/c540108/v540108844/815c/0Ei7pxV3gyE.jpg')
         if 'ретард' in last_chat_text.lower() or 'тупой' in last_chat_text.lower():
