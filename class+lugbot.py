@@ -96,11 +96,10 @@ def main():
                 greet_bot.send_message(last_chat_id, head)
                 greet_bot.send_message(last_chat_id, desc)
                 greet_bot.send_message(last_chat_id, url)
-                if 'refer' in desc:
-                    greet_bot.send_message(last_chat_id, content)
         except Exception as e2:
                 pass
                 print(e2)
+                greet_bot.send_message(last_chat_id, 'there is nothing in Wiki, please input only English words')
             
         if  last_chat_text.lower() == 'сдр' and last_chat_name.lower() == 'boris':
             greet_bot.send_message(last_chat_id, 'С днем рождения, Арсенушка! Радости, улыбок, безмерного и бесконечного счастья. Желаю заиметь побольше рычагов управления своей жизни, чтобы мог влиять на все! Желаю тебе оказываться всегда в нужном месте и в нужное время!')
