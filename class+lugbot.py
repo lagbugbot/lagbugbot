@@ -85,14 +85,17 @@ def main():
         except Exception as e:
             pass
             print(e)
-        
-        if 'wiki' in last_chat_text.lower():
-            a = last_chat_text.lower()
-            txt = a.replace("wiki ","")
-            desc = greet_bot.wiki_search(txt).summary
-            url = greet_bot.wiki_search(txt).url
-            greet_bot.send_message(last_chat_id, desc)
-            greet_bot.send_message(last_chat_id, url)
+        try:
+            if 'wiki' in last_chat_text.lower():
+                a = last_chat_text.lower()
+                txt = a.replace("wiki ","")
+                desc = greet_bot.wiki_search(txt).summary
+                url = greet_bot.wiki_search(txt).url
+                greet_bot.send_message(last_chat_id, desc)
+                greet_bot.send_message(last_chat_id, url)
+            except Exception as e2:
+                pass
+                print(e2)
             
         if  last_chat_text.lower() == 'сдр' and last_chat_name.lower() == 'boris':
             greet_bot.send_message(last_chat_id, 'С днем рождения, Арсенушка! Радости, улыбок, безмерного и бесконечного счастья. Желаю заиметь побольше рычагов управления своей жизни, чтобы мог влиять на все! Желаю тебе оказываться всегда в нужном месте и в нужное время!')
