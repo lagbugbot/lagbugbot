@@ -89,10 +89,15 @@ def main():
             if 'wiki' in last_chat_text.lower():
                 a = last_chat_text.lower()
                 txt = a.replace("wiki ","")
+                head = greet_bot.wiki_search(txt).heading
                 desc = greet_bot.wiki_search(txt).summary
+                content = greet_bot.wiki_search(txt).content
                 url = greet_bot.wiki_search(txt).url
+                greet_bot.send_message(last_chat_id, head)
                 greet_bot.send_message(last_chat_id, desc)
                 greet_bot.send_message(last_chat_id, url)
+                if 'refer' in desc:
+                    greet_bot.send_message(last_chat_id, content)
         except Exception as e2:
                 pass
                 print(e2)
