@@ -48,11 +48,11 @@ class BotHandler:
 
         return last_update
     
-    def wikisearch(self, text):
+    def wikisearch(text):
         wiki = WikiApi()
         results = wiki.find(text)
-        return results
-
+        article = wiki.get_article(results[0])
+        return article
 
 # In[4]:
 
@@ -86,7 +86,14 @@ def main():
             pass
             print(e)
         
-        if 'уходи' in last_chat_text.lower():
+        if 'wiki' in last_chat_text.lower():
+            text = last_chat_text.replace("wiki ","")
+            desc = wikisearch(text).summary
+            url = wikisearch(text).url
+            greet_bot.send_message(last_chat_id, desc)
+            greet_bot.send_message(last_chat_id, url)
+            
+ ''''    if 'уходи' in last_chat_text.lower():
             greet_bot.send_photo(last_chat_id, 'https://pp.userapi.com/c540108/v540108844/815c/0Ei7pxV3gyE.jpg')
         if 'ретард' in last_chat_text.lower() or 'тупой' in last_chat_text.lower():
             greet_bot.send_photo(last_chat_id, 'https://i.imgur.com/xeYzahch.jpg')
@@ -96,11 +103,8 @@ def main():
             greet_bot.send_photo(last_chat_id, 'https://pbs.twimg.com/media/ByObDPcIQAAoG2V.jpg')
         if 'лел' in last_chat_text.lower():
             greet_bot.send_message(last_chat_id, 'не надо тут лел')
-        if 'wiki' in last_chat_text.lower():
-            greet_bot.send_message(last_chat_id, last_chat_text.replace("wiki",""))
-            x = greet_bot.wikisearch(last_chat_text.replace("wiki",""))
-            x
-            greet_bot.send_message(last_chat_id, x[0 - 3])
+ ''''
+
             
         
         
