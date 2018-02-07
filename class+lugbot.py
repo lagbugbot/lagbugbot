@@ -93,9 +93,13 @@ def main():
                 desc = greet_bot.wiki_search(txt).summary
                 content = greet_bot.wiki_search(txt).content
                 url = greet_bot.wiki_search(txt).url
-                greet_bot.send_message(last_chat_id, head)
-                greet_bot.send_message(last_chat_id, desc)
-                greet_bot.send_message(last_chat_id, url)
+                if 'may refer to' in desc:
+                    greet_bot.send_message(last_chat_id, 'There are several options found, please use URL below to choose')
+                    greet_bot.send_message(last_chat_id, url)
+                else:
+                    greet_bot.send_message(last_chat_id, head)
+                    greet_bot.send_message(last_chat_id, desc)
+                    greet_bot.send_message(last_chat_id, url)
         except Exception as e2:
                 pass
                 print(e2)
