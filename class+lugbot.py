@@ -103,7 +103,7 @@ def main():
         except Exception as e2:
                 pass
                 print(e2)
-                greet_bot.send_message(last_chat_id, 'there is nothing in Wiki, please input only English words')
+                greet_bot.send_message(last_chat_id, 'There is nothing in Wiki, or you are using non English words')
         if 'memhelper help' in last_chat_text.lower():
             greet_bot.send_message(last_chat_id, 'With my help you can easily find the short description of any English word from Wikipedia. You just need to type: wiki wordtofind')
             
