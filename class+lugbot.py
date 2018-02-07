@@ -93,7 +93,7 @@ def main():
                 url = greet_bot.wiki_search(txt).url
                 greet_bot.send_message(last_chat_id, desc)
                 greet_bot.send_message(last_chat_id, url)
-            except Exception as e2:
+        except Exception as e2:
                 pass
                 print(e2)
             
