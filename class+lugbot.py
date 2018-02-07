@@ -5,7 +5,7 @@
 
 
 import requests  
-
+from wikiapi import WikiApi
 import datetime
 
 
