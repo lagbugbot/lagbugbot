@@ -93,7 +93,7 @@ def main():
                 desc = greet_bot.wiki_search(txt).summary
                 content = greet_bot.wiki_search(txt).content
                 url = greet_bot.wiki_search(txt).url
-                if 'may refer to' in desc:
+                if ' refer to' in desc:
                     greet_bot.send_message(last_chat_id, 'There are several options found. Please refine your search word or use the URL below to choose')
                     greet_bot.send_message(last_chat_id, url)
                 else:
