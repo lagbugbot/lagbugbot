@@ -48,7 +48,7 @@ class BotHandler:
 
         return last_update
     
-    def wikisearch(text):
+    def wiki_search(text):
         wiki = WikiApi()
         results = wiki.find(text)
         article = wiki.get_article(results[0])
@@ -88,8 +88,8 @@ def main():
         
         if 'wiki' in last_chat_text.lower():
             text = last_chat_text.replace("wiki ","")
-            desc = wikisearch(text).summary
-            url = wikisearch(text).url
+            desc = greet_bot.wiki_search(text).summary
+            url = greet_bot.wiki_search(text).url
             greet_bot.send_message(last_chat_id, desc)
             greet_bot.send_message(last_chat_id, url)
             
