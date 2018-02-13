@@ -124,7 +124,8 @@ def main():
         di = {}
         try:
             if '/add' in last_chat_text.lower():
-                greet_bot.addlist(last_chat_text.lower,replace('add ',''), last_update_id)
+                lastchtxtlow = last_chat_text.lower()
+                greet_bot.addlist(lastchtxtlow.replace('add ',''), last_update_id)
                 greet_bot.send_message(last_chat_id, 'товар(ы) добавлен(ы) в спиок')
             if '/show' in last_chat_text.lower():
                 greet_bot.send_message(last_chat_id, 'список '+ last_chat_id + 'a:')
