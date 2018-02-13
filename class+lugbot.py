@@ -1,4 +1,3 @@
-
 # coding: utf-8
 
 # In[2]:
@@ -7,6 +6,7 @@
 import requests  
 from wikiapi import WikiApi
 import datetime
+import re
 
 
 # In[3]:
@@ -53,6 +53,19 @@ class BotHandler:
         results = wiki.find(text)
         article = wiki.get_article(results[0])
         return article
+    
+    def addlist(item, id):
+        di[id]=di[id] + ',' + item
+        return di
+    
+    def dellist(id):
+        di[id]={}
+        return di
+    
+    def showlist(id):
+        t = di[id].split(',')
+        for i in t:
+            print(i)
 
 # In[4]:
 
@@ -104,8 +117,25 @@ def main():
                 pass
                 print(e2)
                 greet_bot.send_message(last_chat_id, 'There is nothing in Wiki, or you are using non English words')
+                
         if 'memhelper help' in last_chat_text.lower():
             greet_bot.send_message(last_chat_id, 'With my help you can easily find the short description of any English word from Wikipedia. You just need to type: wiki wordtofind')
+            
+        di = {}
+        try:
+            if '/add' in last_chat_text.lower():
+                addlist(last_chat_text.lower,replace('add ',''), last_update_id)
+                greet_bot.send_message(last_chat_id, 'товар(ы) добавлен(ы) в спиок')
+            if '/show' in last_chat_text.lower():
+                greet_bot.send_message(last_chat_id, 'список '+ last_chat_id + 'a:')
+                showlist(last_update_id)                
+            if '/rem' in last_chat_text.lower():
+                dellist(last_chat_id)
+        except Exception as e3:
+            pass
+            print(e3)
+            
+            
             
 #       if 'уходи' in last_chat_text.lower():
 #            greet_bot.send_photo(last_chat_id, 'https://pp.userapi.com/c540108/v540108844/815c/0Ei7pxV3gyE.jpg')
@@ -128,5 +158,3 @@ if __name__ == '__main__':
         main()
     except KeyboardInterrupt:
         exit()
-
-
