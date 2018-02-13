@@ -126,6 +126,7 @@ def main():
             if '/add' in last_chat_text.lower():
                 lastchtxtlow = last_chat_text.lower()
                 lastchtxtlowi = lastchtxtlow.replace('add ','')
+                print(lastchtxtlowi)
                 greet_bot.addlist(lastchtxtlowi, last_chat_name)
                 greet_bot.send_message(last_chat_id, 'товар(ы) добавлен(ы) в список')
             if '/show' in last_chat_text.lower():
