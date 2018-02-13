@@ -124,13 +124,13 @@ def main():
         di = {}
         try:
             if '/add' in last_chat_text.lower():
-                addlist(last_chat_text.lower,replace('add ',''), last_update_id)
+                greet_bot.addlist(last_chat_text.lower,replace('add ',''), last_update_id)
                 greet_bot.send_message(last_chat_id, 'товар(ы) добавлен(ы) в спиок')
             if '/show' in last_chat_text.lower():
                 greet_bot.send_message(last_chat_id, 'список '+ last_chat_id + 'a:')
-                showlist(last_update_id)                
+                greet_bot.showlist(last_update_id)                
             if '/rem' in last_chat_text.lower():
-                dellist(last_chat_id)
+                greet_bot.dellist(last_chat_id)
         except Exception as e3:
             pass
             print(e3)
