@@ -80,11 +80,12 @@ def main():
     new_offset = None
     today = now.day
     hour = now.hour
-    di = {}
-    di['boris'] = ''
+
         
     while True:
         greet_bot.get_updates(new_offset)
+        di = {}
+        di['boris'] = ''
 
         last_update = greet_bot.get_last_update()
         if not last_update:
