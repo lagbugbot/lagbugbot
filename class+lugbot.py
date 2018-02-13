@@ -80,7 +80,7 @@ def main():
     new_offset = None
     today = now.day
     hour = now.hour
-    di['boris'] = ''
+    
         
     while True:
         greet_bot.get_updates(new_offset)
@@ -123,6 +123,7 @@ def main():
             greet_bot.send_message(last_chat_id, 'With my help you can easily find the short description of any English word from Wikipedia. You just need to type: wiki wordtofind')
             
         di = {}
+        di['boris'] = ''
         try:
             if '/add' in last_chat_text.lower():
                 lastchtxtlow = last_chat_text.lower()
