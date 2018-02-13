@@ -55,11 +55,11 @@ class BotHandler:
         return article
     
     def addlist(self, item, id):
-        di[id]=di[id] + ',' + item
+        di[id] = di[id] + ',' + item
         return di
     
     def dellist(self, id):
-        di[id]={}
+        di[id] = {}
         return di
     
     def showlist(self, id):
@@ -84,8 +84,7 @@ def main():
         
     while True:
         greet_bot.get_updates(new_offset)
-        di = {}
-        di['boris'] = ''
+
 
         last_update = greet_bot.get_last_update()
         if not last_update:
@@ -126,6 +125,8 @@ def main():
             
 
         try:
+            di = {}
+            di['boris'] = ''
             if '/add' in last_chat_text.lower():
                 lastchtxtlow = last_chat_text.lower()
                 lastchtxtlowi = lastchtxtlow.replace('/add ','')
