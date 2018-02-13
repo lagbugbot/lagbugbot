@@ -54,15 +54,15 @@ class BotHandler:
         article = wiki.get_article(results[0])
         return article
     
-    def addlist(item, id):
+    def addlist(self, item, id):
         di[id]=di[id] + ',' + item
         return di
     
-    def dellist(id):
+    def dellist(self, id):
         di[id]={}
         return di
     
-    def showlist(id):
+    def showlist(self, id):
         t = di[id].split(',')
         for i in t:
             print(i)
@@ -80,7 +80,8 @@ def main():
     new_offset = None
     today = now.day
     hour = now.hour
-
+    di['boris'] = ''
+        
     while True:
         greet_bot.get_updates(new_offset)
 
@@ -125,7 +126,7 @@ def main():
         try:
             if '/add' in last_chat_text.lower():
                 lastchtxtlow = last_chat_text.lower()
-                lastchtxtlowi = lastchtxtlow.replace('add ','')
+                lastchtxtlowi = lastchtxtlow.replace('/add ','')
                 print(lastchtxtlowi)
                 greet_bot.addlist(lastchtxtlowi, last_chat_name)
                 greet_bot.send_message(last_chat_id, 'товар(ы) добавлен(ы) в список')
