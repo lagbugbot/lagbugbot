@@ -77,14 +77,14 @@ greet_bot = BotHandler(token)
 greetings = ('hello', 'hi', 'greetings', 'sup')  
 badwords = ('шакал', 'толстый', 'свинья', 'жирный', 'попа', 'жопа', 'тварь', 'тупой', 'ишак', 'дурак', 'балда', 'fuck you', 'гавно', 'ублюдок', 'баран', 'идиот')
 now = datetime.datetime.now()
-
+di = {}
+di['boris'] = ''
 
 def main():  
     new_offset = None
     today = now.day
     hour = now.hour
-    di = {}
-    di['boris'] = ''
+
         
     while True:
         greet_bot.get_updates(new_offset)
@@ -144,6 +144,7 @@ def main():
         except Exception as e3:
             pass
             print(e3)
+            greet_bot.send_message(last_chat_id, e3)
             
             
             
