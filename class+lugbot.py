@@ -55,14 +55,17 @@ class BotHandler:
         return article
     
     def addlist(self, item, id):
+        global di
         di[id] = di[id] + ',' + item
         return di
     
     def dellist(self, id):
+        global di
         di[id] = {}
         return di
     
     def showlist(self, id):
+        global di
         t = di[id].split(',')
         for i in t:
             print(i)
@@ -80,7 +83,8 @@ def main():
     new_offset = None
     today = now.day
     hour = now.hour
-
+    di = {}
+    di['boris'] = ''
         
     while True:
         greet_bot.get_updates(new_offset)
@@ -125,8 +129,7 @@ def main():
             
 
         try:
-            di = {}
-            di['boris'] = ''
+
             if '/add' in last_chat_text.lower():
                 lastchtxtlow = last_chat_text.lower()
                 lastchtxtlowi = lastchtxtlow.replace('/add ','')
