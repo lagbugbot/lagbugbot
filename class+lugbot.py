@@ -128,23 +128,23 @@ def main():
             greet_bot.send_message(last_chat_id, 'With my help you can easily find the short description of any English word from Wikipedia. You just need to type: wiki wordtofind')
             
 
-        try:
-
-            if '/add' in last_chat_text.lower():
-                lastchtxtlow = last_chat_text.lower()
-                lastchtxtlowi = lastchtxtlow.replace('/add ','')
-                print(lastchtxtlowi)
-                greet_bot.addlist(lastchtxtlowi, last_chat_name)
-                greet_bot.send_message(last_chat_id, 'товар(ы) добавлен(ы) в список')
-            if '/show' in last_chat_text.lower():
-                greet_bot.send_message(last_chat_id, 'список покупок для '+ last_chat_name)
-                greet_bot.showlist(last_chat_name)                
-            if '/rem' in last_chat_text.lower():
-                greet_bot.dellist(last_chat_id)
-        except Exception as e3:
-            pass
-            print(e3)
-            greet_bot.send_message(last_chat_id, e3)
+#        try:
+#
+#            if '/add' in last_chat_text.lower():
+#                lastchtxtlow = last_chat_text.lower()
+#                lastchtxtlowi = lastchtxtlow.replace('/add ','')
+#                print(lastchtxtlowi)
+#                greet_bot.addlist(lastchtxtlowi, last_chat_name)
+#                greet_bot.send_message(last_chat_id, 'товар(ы) добавлен(ы) в список')
+#            if '/show' in last_chat_text.lower():
+#                greet_bot.send_message(last_chat_id, 'список покупок для '+ last_chat_name)
+#                greet_bot.showlist(last_chat_name)                
+#            if '/rem' in last_chat_text.lower():
+#                greet_bot.dellist(last_chat_id)
+#        except Exception as e3:
+#            pass
+#            print(e3)
+#            greet_bot.send_message(last_chat_id, e3)
             
             
             
